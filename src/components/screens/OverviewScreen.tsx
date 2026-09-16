@@ -10,7 +10,7 @@ import {
   LEIPZIG_CONNECTION_EXAMPLES,
   TIMELINE
 } from '../../data/awardData';
-import { Check, X, ArrowUpRight, MapPin, Calendar, Users } from 'lucide-react';
+import { Check, X, ArrowUpRight, MapPin, Calendar } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 interface OverviewScreenProps {
@@ -406,7 +406,6 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
           <div className="grid grid-cols-1 gap-6 w-2/3 mx-auto">
             <div className="bg-white border border-[#111827] corner-cut p-6 flex flex-col items-center text-center space-y-4">
-              <Users className="text-[#F07E26] shrink-0" style={{ width: '2.5em', height: '2.5em' }} strokeWidth={2.5} />
               <h3 className="text-[#111827] text-h3">
                 Offen für diese Profile
               </h3>
@@ -423,7 +422,6 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
             </div>
 
             <div className="bg-[#F07E26] text-white corner-cut p-6 border border-[#111827] flex flex-col items-center text-center space-y-4">
-              <MapPin className="text-[#111827] shrink-0" style={{ width: '2.5em', height: '2.5em' }} strokeWidth={2.5} />
               <h3 className="text-white text-h3">
                 Deutschlandweit offen —
                 <br />
@@ -605,7 +603,10 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           </p>
           <p className="text-gray-600 text-label">
             Fragen vorher? Schreib uns direkt an{' '}
-            <span className="font-condensed text-[#F07E26]">[Kontakt-E-Mail einsetzen]</span>.
+            <a href="mailto:kontakt@reward-leipzig.de" className="font-condensed text-[#F07E26] hover:underline">
+              kontakt@reward-leipzig.de
+            </a>
+            .
           </p>
           <div className="flex flex-col items-center gap-3 pt-4">
             <button
@@ -646,7 +647,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   <div
                     key={index}
                     onClick={() => setSelectedPhase(index)}
-                    className={`relative flex flex-col items-center text-center p-6 corner-cut border-2 transition-colors duration-200 cursor-pointer ${
+                    className={`relative flex flex-col items-center text-center pt-1 pb-6 px-6 corner-cut border-2 transition-colors duration-200 cursor-pointer ${
                       isActive ? 'bg-[#F07E26] border-[#F07E26]' : 'border-transparent'
                     }`}
                   >
@@ -661,7 +662,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                       style={{ top: '3.5rem' }}
                     ></span>
 
-                    <div className="mt-6 md:mt-8 space-y-2">
+                    <div className="mt-6 md:mt-8 space-y-2 w-full min-w-0">
                       <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#111827]'}`}>
                         {item.date}
                       </div>

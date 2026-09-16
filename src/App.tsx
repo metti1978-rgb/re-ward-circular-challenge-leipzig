@@ -49,13 +49,15 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#F8F9FA] text-[#141B2B]">
-      {/* 1. Screen Switcher Tool Bar (to easily view & switch all screens) */}
-      <ScreenSwitcherBar
-        currentScreen={currentScreen}
-        onSelectScreen={(screen) => handleNavigate(screen)}
-        viewMode={viewMode}
-        onToggleViewMode={setViewMode}
-      />
+      {/* 1. Screen Switcher Tool Bar (dev-only tool to easily view & switch all screens) */}
+      {import.meta.env.DEV && (
+        <ScreenSwitcherBar
+          currentScreen={currentScreen}
+          onSelectScreen={(screen) => handleNavigate(screen)}
+          viewMode={viewMode}
+          onToggleViewMode={setViewMode}
+        />
+      )}
 
       {/* Main Website Frame (Full Desktop or Mobile Mockup Frame) */}
       {viewMode === 'mobile-mockup' ? (

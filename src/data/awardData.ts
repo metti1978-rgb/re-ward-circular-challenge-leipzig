@@ -92,7 +92,7 @@ export const TIMELINE: TimelineMilestone[] = [
   {
     step: 'PHASE 01',
     date: 'bis 23. Oktober 2026',
-    title: 'Bewerbungsphase',
+    title: 'Bewerbung',
     status: 'active',
     description:
       'Offener Call für marktfähige Repair-, Reuse-, Repurpose-, Recycling- und Rethink-Lösungen. Einreichung über das RE:WARD Bewerbungsformular, rund 10 Minuten.',
