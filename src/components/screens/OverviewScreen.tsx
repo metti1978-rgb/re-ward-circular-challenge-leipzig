@@ -189,7 +189,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     href="https://www.leipzig.de"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-24 sm:w-32 transition-transform duration-200 hover:scale-95"
+                    className="w-32 sm:w-[11.5rem] transition-transform duration-200 hover:scale-95"
                     aria-label="Stadt Leipzig (öffnet in neuem Fenster)"
                   >
                     <img src="/assets/LO Leipzig.svg" alt="Stadt Leipzig" className="w-full" />
@@ -198,7 +198,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     href="https://www.wiederschoen-leipzig.de"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-24 sm:w-32 transition-transform duration-200 hover:scale-95"
+                    className="w-32 sm:w-[11.5rem] transition-transform duration-200 hover:scale-95"
                     aria-label="Wiederschön (öffnet in neuem Fenster)"
                   >
                     <img src="/assets/LO WS.svg" alt="Wiederschön" className="w-full" />
@@ -445,27 +445,6 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
         </div>
       </section>
 
-      {/* FAQ — Fläche: weiß-creme Verlauf */}
-      <section
-        id="faq"
-        className="w-full py-14 sm:py-20 px-4 sm:px-6"
-        style={{ background: 'linear-gradient(105deg, #FFFFFF 0%, #FFFFFF 66%, #EFEDE6 100%)' }}
-      >
-        <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
-          <span className={`${tagClass} text-[#F07E26]`}>FAQ</span>
-          <h2 className="uppercase text-[#111827] text-h2 mb-8">Häufige Fragen</h2>
-
-          <div className="space-y-6 text-left w-full">
-            {FAQ_ITEMS.map((faq) => (
-              <div key={faq.question} className="border-b border-[#111827]/10 pb-6">
-                <h3 className="text-[#111827] text-h4 mb-2">{faq.question}</h3>
-                <p className="text-gray-700 text-body leading-relaxed">{faq.answer}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* 4. PREISBLOCK — Fläche: weiß-grau Verlauf wie "Die Ausschreibung" */}
       <section
         id="preise"
@@ -480,7 +459,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
           <div className="mb-8 w-full">
             <span className={`${tagClass} text-[#F07E26]`}>PREISE</span>
-            <h2 className="uppercase text-[#111827] text-h2">DAS GEWINNST DU</h2>
+            <h2 className="uppercase text-[#111827] text-h2">DAS KÖNNT IHR GEWINNEN</h2>
           </div>
 
           <div className="w-2/3 mx-auto space-y-6">
@@ -680,6 +659,27 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ — Fläche: weiß-creme Verlauf — letzte Sektion vor dem Footer */}
+      <section
+        id="faq"
+        className="w-full py-14 sm:py-20 px-4 sm:px-6"
+        style={{ background: 'linear-gradient(105deg, #FFFFFF 0%, #FFFFFF 66%, #EFEDE6 100%)' }}
+      >
+        <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
+          <span className={`${tagClass} text-[#F07E26]`}>FAQ</span>
+          <h2 className="uppercase text-[#111827] text-h2 mb-8">Häufige Fragen</h2>
+
+          <div className="space-y-6 text-center w-full">
+            {FAQ_ITEMS.map((faq) => (
+              <div key={faq.question} className="border-b border-[#111827]/10 pb-6">
+                <h3 className="text-[#111827] text-h5 mb-2">{faq.question}</h3>
+                <p className="text-gray-700 text-body leading-relaxed">{faq.answer}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

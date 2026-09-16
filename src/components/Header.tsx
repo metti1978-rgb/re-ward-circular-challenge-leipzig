@@ -91,7 +91,7 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate }) => 
 
             <div className="flex-1 flex items-center justify-end gap-3">
               {/* CTA Button */}
-              <div className="hidden sm:flex items-center gap-3">
+              <div className="hidden sm:flex items-center gap-3 -translate-y-1.5">
                 <button
                   onClick={() => onNavigate('portal')}
                   className="btn-editorial-primary cursor-pointer px-6 py-3"
