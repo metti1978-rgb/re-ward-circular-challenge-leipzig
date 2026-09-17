@@ -31,6 +31,15 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             <img src="/assets/LO WS.svg" alt="Wiederschön" className="h-8 sm:h-10 w-auto invert" />
           </a>
           <a
+            href="https://www.stadtreinigung-leipzig.de"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Stadtreinigung Leipzig (öffnet in neuem Fenster)"
+            className="transition-transform duration-200 hover:scale-95"
+          >
+            <img src="/assets/LO SRL.jpg" alt="Stadtreinigung Leipzig" className="h-8 sm:h-10 w-auto" />
+          </a>
+          <a
             href="https://www.leipzig.de"
             target="_blank"
             rel="noopener noreferrer"
