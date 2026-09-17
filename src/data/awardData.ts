@@ -31,7 +31,6 @@ export const PRIZES: PrizeTier[] = [
 ];
 
 export const FINALIST_BENEFITS: string[] = [
-  'Zugang zu Leipziger Stoffströmen und Testumgebungen',
   'Kontakt zu potenziellen Erstkunden',
   'Vermittlung an Umsetzungspartner',
   'Sichtbarkeit auf der Pitch-Bühne und in der Berichterstattung'
@@ -95,7 +94,7 @@ export const TIMELINE: TimelineMilestone[] = [
     title: 'Bewerbung',
     status: 'active',
     description:
-      'Offener Call für marktfähige Repair-, Reuse-, Repurpose-, Recycling- und Rethink-Lösungen. Einreichung über das RE:WARD Bewerbungsformular, rund 10 Minuten.',
+      'Offener Call für marktfähige Repair-, Reuse-, Repurpose-, Recycling- und Rethink-Lösungen. Einreichung über das RE/WARD Bewerbungsformular, rund 10 Minuten.',
     location: 'Digitales Bewerbungsformular'
   },
   {

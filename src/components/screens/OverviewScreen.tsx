@@ -48,7 +48,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: 'Muss meine Lösung schon fertig sein?',
     answer:
-      'Nein, aber sie sollte mindestens als Prototyp existieren — besser schon pilotfähig sein. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen nicht zu RE:WARD.',
+      'Nein, aber sie sollte mindestens als Prototyp existieren — besser schon pilotfähig sein. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen nicht zu RE/WARD.',
   },
   {
     question: 'Was passiert nach der Bewerbung?',
@@ -254,25 +254,26 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   </h1>
 
                   <p className="text-gray-700 text-body leading-relaxed max-w-3xl mx-auto">
-                    Für Lösungen, die Material im Wert halten — und sich verkaufen lassen.
+                    Für Lösungen, die Material im Wert halten und sich verkaufen lassen.
                   </p>
 
                   <div className="space-y-6 max-w-3xl mx-auto">
                     <p className="text-h3 text-[#111827] font-semibold leading-snug">
-                      Du hast eine Idee, wie sich ein Stoffstrom neu denken lässt — und ein Geschäftsmodell dazu?
+                      Du hast eine Idee, wie sich ein Stoffstrom neu denken lässt und ein Geschäftsmodell dazu?
                       <br />
                       Dann suchen wir dich.
                     </p>
 
                     <p className="text-gray-700 text-body leading-relaxed">
                       Reparieren statt ersetzen. Wiederverwenden statt entsorgen. Aufbereiten statt neu beschaffen.
+                      <br />
                       In der Kreislaufwirtschaft steckt ein Markt. Aber viele gute Lösungen scheitern nicht an der
                       Idee, sondern an Gewährleistung, Logistik, Qualitätsnachweisen oder daran, dass niemand den
                       ersten Auftrag gibt.
                     </p>
 
                     <p className="text-gray-700 text-body leading-relaxed">
-                      Genau da setzt <strong className="font-bold text-[#111827]">RE:WARD</strong> an. Wir suchen marktfähige Produkte, Dienstleistungen und
+                      Genau da setzt <strong className="font-bold text-[#111827]">RE/WARD</strong> an. Wir suchen marktfähige Produkte, Dienstleistungen und
                       Geschäftsmodelle für Repair, Reuse, Repurpose, Recycling und Rethink. Offen für jeden
                       Stoffstrom — von {MATERIAL_STREAMS.join(', ')}.
                     </p>
@@ -459,7 +460,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
         <div className="relative z-10 max-w-7xl mx-auto flex flex-col items-center text-center">
           <div className="mb-8 w-full">
             <span className={`${tagClass} text-[#F07E26]`}>PREISE</span>
-            <h2 className="uppercase text-[#111827] text-h2">DAS KÖNNT IHR GEWINNEN</h2>
+            <h2 className="uppercase text-[#111827] text-h2">Das gibt es zu gewinnen</h2>
           </div>
 
           <div className="w-2/3 mx-auto space-y-6">
@@ -546,7 +547,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           </p>
           <p className="text-white/80 text-body">
             Wenn du dich bewirbst, blocke dir den Termin jetzt. Wer in die Shortlist kommt, pitcht an
-            diesem Tag persönlich. Wir melden uns bis zum 30. Oktober bei dir.
+            diesem Tag persönlich. Wir melden uns bis zum 30. Oktober bei euch.
           </p>
           <div className="flex flex-col items-center gap-3 pt-4">
             <button
@@ -577,11 +578,11 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
             Bewirb dich
           </h3>
           <p className="text-gray-700 text-body">
-            Das Formular dauert rund 10 Minuten. Du beantwortest überwiegend Auswahlfragen — keine
-            Aufsätze. Am Ende lädst du eine PDF mit maximal 3 Seiten hoch.
+            Das Ausfüllen des Formulars dauert nur 10 Minuten. Du beantwortest überwiegend
+            Auswahlfragen — keine Aufsätze. Am Ende lädst du eine PDF mit maximal 3 Seiten hoch.
           </p>
           <p className="text-gray-600 text-label">
-            Fragen vorher? Schreib uns direkt an{' '}
+            Fragen? Schreib uns direkt an{' '}
             <a href="mailto:kontakt@reward-leipzig.de" className="font-condensed text-[#F07E26] hover:underline">
               kontakt@reward-leipzig.de
             </a>
