@@ -385,7 +385,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   </span>
                 ))}
               </div>
-              <p className="text-label text-white/80 border-t border-white/20 pt-3">
+              <p className="text-label text-white/80">
                 Deine Lösung sollte mindestens als Prototyp existieren — besser schon pilotfähig sein.
               </p>
             </div>
@@ -495,7 +495,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   </span>
                 ))}
               </div>
-              <p className="text-body text-gray-600 italic border-t border-gray-200 pt-4">
+              <p className="text-body text-gray-600 italic">
                 Für viele Teams ist das der eigentliche Gewinn: nicht das Preisgeld, sondern der erste
                 Auftrag danach.
               </p>
@@ -676,7 +676,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
           <div className="space-y-6 text-center w-full">
             {FAQ_ITEMS.map((faq) => (
-              <div key={faq.question} className="border-b border-[#111827]/10 pb-6">
+              <div key={faq.question}>
                 <h3 className="text-[#111827] text-h5 mb-2">{faq.question}</h3>
                 <p className="text-gray-700 text-body leading-relaxed">{faq.answer}</p>
               </div>
