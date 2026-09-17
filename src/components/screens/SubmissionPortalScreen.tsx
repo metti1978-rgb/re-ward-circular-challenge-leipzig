@@ -150,7 +150,7 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
           </h1>
 
           <p className="text-gray-700 text-body leading-relaxed">
-            Dein Projekt <strong>„{formData.projectName || 'RE/WARD Einreichung'}“</strong> wurde
+            Dein Projekt <strong>„{formData.projectName || 'RE\\WARD Einreichung'}“</strong> wurde
             registriert.
           </p>
 
@@ -285,7 +285,7 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
                 1. PROJEKTDATEN
               </h2>
               <p className="text-label text-gray-600">
-                <strong className="font-bold">RE/WARD</strong> ist deutschlandweit offen — deine Lösung braucht nur einen klaren Bezug zu Leipzig.
+                <strong className="font-bold">RE\WARD</strong> ist deutschlandweit offen — deine Lösung braucht nur einen klaren Bezug zu Leipzig.
               </p>
             </div>
 
@@ -457,7 +457,7 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
               </select>
               <p className="text-label text-gray-500">
                 Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne
-                Marktperspektive passen nicht zu <strong className="font-bold">RE/WARD</strong>.
+                Marktperspektive passen nicht zu <strong className="font-bold">RE\WARD</strong>.
               </p>
             </div>
           </div>
@@ -639,7 +639,7 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
                 />
                 <span className="text-label text-gray-700 leading-normal">
                   Ich erkläre mich einverstanden mit der datenschutzkonformen Weitergabe der Unterlagen an
-                  die Jury des <strong className="font-bold">RE/WARD</strong> Circular Challenge Leipzig und der Nennung des Projektnamens im
+                  die Jury des <strong className="font-bold">RE\WARD</strong> Circular Challenge Leipzig und der Nennung des Projektnamens im
                   Falle einer Nominierung.
                 </span>
               </label>

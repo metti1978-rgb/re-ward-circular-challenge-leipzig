@@ -30,7 +30,7 @@ export const ScreenSwitcherBar: React.FC<ScreenSwitcherBarProps> = ({
         <div className="flex items-center gap-2">
           <span className="inline-block w-2.5 h-2.5 bg-[#F07E26] animate-pulse"></span>
           <span className="font-condensed font-bold uppercase tracking-wider text-label text-[#FED27A]">
-            RE/WARD BILDSCHIRM-VORSCHAU:
+            RE\WARD BILDSCHIRM-VORSCHAU:
           </span>
           <span className="hidden md:inline-block text-label font-condensed text-gray-400">
             [Landingpage Leipzig 2026]

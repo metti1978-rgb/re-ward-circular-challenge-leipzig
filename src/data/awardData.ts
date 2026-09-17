@@ -94,7 +94,7 @@ export const TIMELINE: TimelineMilestone[] = [
     title: 'Bewerbung',
     status: 'active',
     description:
-      'Offener Call für marktfähige Repair-, Reuse-, Repurpose-, Recycling- und Rethink-Lösungen. Einreichung über das RE/WARD Bewerbungsformular, rund 10 Minuten.',
+      'Offener Call für marktfähige Repair-, Reuse-, Repurpose-, Recycling- und Rethink-Lösungen. Einreichung über das RE\\WARD Bewerbungsformular, rund 10 Minuten.',
     location: 'Digitales Bewerbungsformular'
   },
   {

@@ -75,7 +75,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         </div>
 
         <div className="text-label font-condensed text-white/60">
-          © 2026 <strong className="font-bold">RE/WARD</strong> — Die Circular Challenge · Stadt Leipzig. Alle Rechte vorbehalten.
+          © 2026 <strong className="font-bold">RE\WARD</strong> — Die Circular Challenge · Stadt Leipzig. Alle Rechte vorbehalten.
         </div>
       </div>
     </footer>

@@ -48,7 +48,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: 'Muss meine Lösung schon fertig sein?',
     answer:
-      'Nein, aber sie sollte mindestens als Prototyp existieren — besser schon pilotfähig sein. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen nicht zu RE/WARD.',
+      'Nein, aber sie sollte mindestens als Prototyp existieren — besser schon pilotfähig sein. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen nicht zu RE\\WARD.',
   },
   {
     question: 'Was passiert nach der Bewerbung?',
@@ -273,7 +273,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     </p>
 
                     <p className="text-gray-700 text-body leading-relaxed">
-                      Genau da setzt <strong className="font-bold text-[#111827]">RE/WARD</strong> an. Wir suchen marktfähige Produkte, Dienstleistungen und
+                      Genau da setzt <strong className="font-bold text-[#111827]">RE\WARD</strong> an. Wir suchen marktfähige Produkte, Dienstleistungen und
                       Geschäftsmodelle für Repair, Reuse, Repurpose, Recycling und Rethink. Offen für jeden
                       Stoffstrom — von {MATERIAL_STREAMS.join(', ')}.
                     </p>
