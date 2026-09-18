@@ -646,8 +646,8 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                       <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#111827]'}`}>
                         {item.date}
                       </div>
-                      <h3 className={`text-h3 ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.title}</h3>
-                      <p className={`text-body ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.description}</p>
+                      <h3 className={`text-h4 pb-2 border-b ${isActive ? 'text-white border-white/30' : 'text-[#111827] border-[#111827]/15'}`}>{item.title}</h3>
+                      <p className={`text-body pt-1 ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.description}</p>
 
                       {item.location && (
                         <div className={`text-label font-condensed pt-2 flex items-center justify-center gap-1 ${isActive ? 'text-white' : 'text-[#111827]'}`}>
