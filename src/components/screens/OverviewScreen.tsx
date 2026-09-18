@@ -139,7 +139,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
         {/* 1. HERO — Fläche: Sekundärfarben-Verlauf (deckend, ohne Hintergrundbild) */}
         <section
-          className="relative overflow-hidden w-full border-b border-[#111827]/10 flex-1 flex items-start py-10 sm:py-16 pb-16 sm:pb-20 px-4 sm:px-6 -mt-px"
+          className="relative overflow-hidden w-full border-b border-[#111827]/10 flex-1 flex items-start py-10 sm:py-16 pb-16 sm:pb-20 px-3 sm:px-6 -mt-px"
           style={{
             background: 'linear-gradient(to top, rgba(17,24,39,0.25) 0%, rgba(255,255,255,1) 100%)',
           }}
@@ -155,9 +155,9 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
           <div className="relative z-10 max-w-7xl mx-auto w-full">
             {!slide.noLogo && !slide.minimal && (
-              <div className="grid grid-cols-[6rem_minmax(0,1fr)_6rem] sm:grid-cols-[15rem_minmax(0,1fr)_15rem] items-start gap-2 sm:gap-4 mb-10 sm:mb-14">
+              <div className="grid grid-cols-[5rem_minmax(0,1fr)_5rem] sm:grid-cols-[18.75rem_minmax(0,1fr)_18.75rem] items-start gap-2 sm:gap-4 mb-10 sm:mb-14">
                 <div
-                  className="w-24 sm:w-[18.75rem] mt-[0.3rem] ml-[0.6rem] sm:mt-[0.9375rem] sm:ml-[1.875rem] justify-self-start"
+                  className="w-20 sm:w-[18.75rem] mt-[0.3rem] ml-[0.6rem] sm:mt-[0.9375rem] sm:ml-[1.875rem] justify-self-start"
                   style={{ animation: 'pulse-scale 2.5s ease-in-out infinite' }}
                 >
                   <img
@@ -189,7 +189,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     href="https://www.leipzig.de"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-32 sm:w-[11.5rem] transition-transform duration-200 hover:scale-95"
+                    className="w-20 sm:w-[11.5rem] transition-transform duration-200 hover:scale-95"
                     aria-label="Stadt Leipzig (öffnet in neuem Fenster)"
                   >
                     <img src="/assets/LO Leipzig.svg" alt="Stadt Leipzig" className="w-full" />
@@ -198,7 +198,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     href="https://www.wiederschoen-leipzig.de"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-32 sm:w-[11.5rem] transition-transform duration-200 hover:scale-95"
+                    className="w-20 sm:w-[11.5rem] transition-transform duration-200 hover:scale-95"
                     aria-label="Wiederschön (öffnet in neuem Fenster)"
                   >
                     <img src="/assets/LO WS.svg" alt="Wiederschön" className="w-full" />
@@ -314,7 +314,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
         {/* BULLET-FACTS — doppelte Höhe, Punkt mittig über jeder Spalte, doppelt so groß */}
         <section
-          className="relative z-10 w-full border-b border-[#111827]/10 py-16 sm:py-20 px-4 sm:px-6 -mt-px"
+          className="relative z-10 w-full border-b border-[#111827]/10 py-16 sm:py-20 px-3 sm:px-6 -mt-px"
           style={{ background: 'linear-gradient(105deg, #F07E26 0%, #F07E26 66%, #B8560F 100%)' }}
         >
           <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
@@ -334,7 +334,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
       {/* 2. WAS WIR SUCHEN — Fläche: weiß */}
       <section
         id="was-wir-suchen"
-        className="relative overflow-hidden w-full py-14 sm:py-20 px-4 sm:px-6"
+        className="relative overflow-hidden w-full py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: 'linear-gradient(to top, rgba(17,24,39,0.25) 0%, rgba(255,255,255,1) 100%)' }}
       >
         <div
@@ -352,7 +352,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
             </p>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 w-2/3 mx-auto">
+          <div className="grid grid-cols-1 gap-6 w-full sm:w-2/3 sm:mx-auto">
             <div className="bg-white border border-[#111827] corner-cut p-6 flex flex-col items-center text-center space-y-4">
               <Check className="text-[#F07E26] shrink-0" style={{ width: '2.5em', height: '2.5em' }} strokeWidth={2.5} />
               <h3 className="text-[#111827] text-h3">
@@ -396,7 +396,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
       {/* 3. WER TEILNEHMEN KANN — Fläche: tertiary-tint */}
       <section
         id="teilnehmen"
-        className="w-full py-14 sm:py-20 px-4 sm:px-6"
+        className="w-full py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: '#FFFFFF' }}
       >
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
@@ -405,7 +405,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
             <h2 className="uppercase text-[#111827] text-h2">WER TEILNEHMEN KANN</h2>
           </div>
 
-          <div className="grid grid-cols-1 gap-6 w-2/3 mx-auto">
+          <div className="grid grid-cols-1 gap-6 w-full sm:w-2/3 sm:mx-auto">
             <div className="bg-white border border-[#111827] corner-cut p-6 flex flex-col items-center text-center space-y-4">
               <h3 className="text-[#111827] text-h3">
                 Offen für diese Profile
@@ -449,7 +449,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
       {/* 4. PREISBLOCK — Fläche: weiß-grau Verlauf wie "Die Ausschreibung" */}
       <section
         id="preise"
-        className="relative overflow-hidden w-full py-14 sm:py-20 px-4 sm:px-6"
+        className="relative overflow-hidden w-full py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: 'linear-gradient(to top, rgba(17,24,39,0.25) 0%, rgba(255,255,255,1) 100%)' }}
       >
         <div
@@ -463,7 +463,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
             <h2 className="uppercase text-[#111827] text-h2">Das gibt es zu gewinnen</h2>
           </div>
 
-          <div className="w-2/3 mx-auto space-y-6">
+          <div className="w-full sm:w-2/3 sm:mx-auto space-y-6">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {PRIZES.map((prize, idx) => (
                 <div
@@ -507,7 +507,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
       {/* 5. SAVE THE DATE — Fläche: ink (dunkel) */}
       <section
         id="save-the-date"
-        className="relative overflow-hidden w-full text-white py-14 sm:py-20 px-4 sm:px-6"
+        className="relative overflow-hidden w-full text-white py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: '#111827' }}
         onMouseMove={handleSpotMouseMove}
       >
@@ -567,7 +567,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
       {/* 6. ÜBERGANG ZUM FORMULAR — Fläche: tertiary-tint */}
       <section
-        className="w-full py-14 sm:py-20 px-4 sm:px-6"
+        className="w-full py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: 'linear-gradient(105deg, #F8F9FA 0%, #F8F9FA 66%, #E7E5DD 100%)' }}
       >
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center space-y-3">
@@ -604,7 +604,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
       {/* TIMELINE — Fläche: canvas */}
       <section
-        className="w-full py-14 sm:py-20 px-4 sm:px-6"
+        className="w-full py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: 'linear-gradient(105deg, #F8F9FA 0%, #F8F9FA 66%, #E7E5DD 100%)' }}
       >
         <div className="max-w-7xl mx-auto flex flex-col items-center text-center">
@@ -614,7 +614,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           </div>
 
           {/* Offene Zeitachse, zentriert, ohne Kästen, durchgehende Linie mit mittigem Punkt je Spalte */}
-          <div className="relative w-2/3 mx-auto">
+          <div className="relative w-full sm:w-2/3 sm:mx-auto">
             <div
               className="hidden md:block absolute left-0 right-0 h-[2px] bg-[#111827]"
               style={{ top: '3.5rem' }}
@@ -667,7 +667,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
       {/* FAQ — Fläche: weiß-creme Verlauf — letzte Sektion vor dem Footer */}
       <section
         id="faq"
-        className="w-full py-14 sm:py-20 px-4 sm:px-6"
+        className="w-full py-14 sm:py-20 px-3 sm:px-6"
         style={{ background: 'linear-gradient(105deg, #FFFFFF 0%, #FFFFFF 66%, #EFEDE6 100%)' }}
       >
         <div className="max-w-3xl mx-auto flex flex-col items-center text-center">

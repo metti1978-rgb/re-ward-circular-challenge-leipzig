@@ -38,6 +38,24 @@
   --text-micro--line-height: 1.4;
 }
 
+/* Mobile: Überschriften-Skala sinnvoll verkleinert, damit h1-h6 auf schmalen Screens nicht überproportional wirken */
+@media (max-width: 640px) {
+  :root {
+    --text-h1: 2.25rem;
+    --text-h1--line-height: 1.15;
+    --text-h2: 1.875rem;
+    --text-h2--line-height: 1.2;
+    --text-h3: 1.5rem;
+    --text-h3--line-height: 1.25;
+    --text-h4: 1.25rem;
+    --text-h4--line-height: 1.3;
+    --text-h5: 1.125rem;
+    --text-h5--line-height: 1.35;
+    --text-h6: 1rem;
+    --text-h6--line-height: 1.4;
+  }
+}
+
 html {
   overflow-x: hidden;
 }

@@ -9,7 +9,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer
-      className="w-full text-white pt-16 pb-12 px-4 sm:px-6"
+      className="w-full text-white pt-16 pb-12 px-3 sm:px-6"
       style={{ background: '#111827' }}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-10">

@@ -31,8 +31,8 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate }) => 
   const sectionLinks: { id: string; label: string }[] = [
     { id: 'was-wir-suchen', label: 'Was wir suchen' },
     { id: 'teilnehmen', label: 'Wer teilnehmen kann' },
-    { id: 'faq', label: 'FAQ' },
     { id: 'preise', label: 'Preise' },
+    { id: 'faq', label: 'FAQ' },
   ];
 
   const goToSection = (id: string) => {
@@ -54,7 +54,7 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate }) => 
       style={{ backgroundColor: '#ffffff' }}
     >
       {/* Simple info stripe: Hausschrift, einheitliche Größe */}
-      <div className="py-1.5 px-4 sm:px-6">
+      <div className="py-1.5 px-3 sm:px-6">
         <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
           <p className="font-body font-normal text-body text-[#111827] m-0">
             Jetzt mitmachen und bewerben!
@@ -70,12 +70,12 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate }) => 
 
       {/* Main navigation row — Hoover-Fläche deckt die gesamte Zeile ab, nicht nur die Nav-Links */}
       <div className="w-full transition-colors duration-200 hover:bg-[#F07E26]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-5">
+        <div className="max-w-7xl mx-auto px-3 sm:px-6 py-5">
           <div className="flex items-center gap-6 xl:gap-10">
-            {/* linker Spacer — balanciert die CTA/Toggle-Breite rechts, damit das Logo mittig steht */}
-            <div className="hidden lg:block flex-1" />
+            {/* linker Spacer — balanciert die CTA/Toggle-Breite rechts, damit das Logo mittig steht (auch mobil) */}
+            <div className="flex-1" />
 
-            {/* Logo — zentriert in der Navigationszeile */}
+            {/* Logo — zentriert in der Navigationszeile, auf allen Breakpoints */}
             <button
               onClick={() => {
                 onNavigate('overview');
@@ -83,7 +83,7 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate }) => 
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
               }}
-              className="shrink-0 cursor-pointer translate-y-[0.6px] transition-transform duration-200 hover:scale-95 lg:mx-auto"
+              className="shrink-0 cursor-pointer translate-y-[0.6px] transition-transform duration-200 hover:scale-95 mx-auto"
               aria-label="Re:Ward Startseite"
             >
               <RewardLogo size="lg" variant="symbol-only" />

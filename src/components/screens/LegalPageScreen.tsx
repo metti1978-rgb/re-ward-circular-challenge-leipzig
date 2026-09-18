@@ -21,7 +21,7 @@ const BLINDTEXT_PARAGRAPHS = [
 export const LegalPageScreen: React.FC<LegalPageScreenProps> = ({ onNavigate, eyebrow, title }) => {
   return (
     <section
-      className="w-full py-14 sm:py-20 px-4 sm:px-6"
+      className="w-full py-14 sm:py-20 px-3 sm:px-6"
       style={{ background: 'linear-gradient(105deg, #FFFFFF 0%, #FFFFFF 66%, #EFEDE6 100%)' }}
     >
       <div className="max-w-3xl mx-auto flex flex-col items-center text-center">
