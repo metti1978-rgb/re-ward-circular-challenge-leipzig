@@ -55,7 +55,7 @@ export const Header: React.FC<HeaderProps> = ({ currentScreen, onNavigate }) => 
     >
       {/* Simple info stripe: Hausschrift, einheitliche Größe */}
       <div className="py-1.5 px-3 sm:px-6">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+        <div className="max-w-7xl mx-auto flex flex-col items-center text-center gap-1.5 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between sm:text-left sm:gap-2">
           <p className="font-body font-normal text-body text-[#111827] m-0">
             Jetzt mitmachen und bewerben!
           </p>
