@@ -24,14 +24,14 @@ export const PhotoStrip: React.FC = () => {
   const loopPhotos = [...PHOTOS, ...PHOTOS];
 
   return (
-    <div className="w-full overflow-hidden bg-[#111827] py-3">
-      <div className="flex w-max animate-[photo-strip-scroll_50s_linear_infinite] hover:[animation-play-state:paused]">
+    <div className="w-full overflow-hidden bg-[#111827]">
+      <div className="flex w-max animate-[photo-strip-scroll_80s_linear_infinite] hover:[animation-play-state:paused]">
         {loopPhotos.map((file, i) => (
           <img
             key={`${file}-${i}`}
             src={`/assets/fotos ws/${file}`}
             alt="Wiederschön — Impressionen aus dem Concept Store"
-            className="h-32 sm:h-44 md:h-52 w-auto shrink-0 corner-cut mx-2 object-cover"
+            className="h-32 sm:h-44 md:h-52 w-auto shrink-0 object-cover"
             loading="lazy"
           />
         ))}
