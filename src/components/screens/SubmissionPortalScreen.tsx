@@ -12,14 +12,31 @@ interface SubmissionPortalScreenProps {
 
 const STORAGE_KEY = 'reward_leipzig_submission_draft_v1';
 
+const GAS_ENDPOINT = import.meta.env.VITE_GAS_ENDPOINT as string | undefined;
+const GAS_TOKEN = import.meta.env.VITE_GAS_TOKEN as string | undefined;
+
 const tagClass =
   'font-condensed text-label font-semibold uppercase tracking-wide corner-cut';
+
+const fileToBase64 = (file: File): Promise<string> =>
+  new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = reader.result as string;
+      resolve(result.split(',')[1] ?? '');
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
 
 export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ onNavigate }) => {
   const [step, setStep] = useState<1 | 2 | 3 | 4>(1);
   const [isDragActive, setIsDragActive] = useState<boolean>(false);
   const [isSubmitted, setIsSubmitted] = useState<boolean>(false);
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitError, setSubmitError] = useState<string>('');
   const [submissionId, setSubmissionId] = useState<string>('');
+  const [pdfFile, setPdfFile] = useState<File | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   const [formData, setFormData] = useState<SubmissionData>({
@@ -105,6 +122,7 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
       ...prev,
       files: newFiles.slice(0, 1)
     }));
+    setPdfFile(fileList.slice(0, 1)[0] ?? null);
   };
 
   const removeFile = (fileId: string) => {
@@ -112,22 +130,69 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
       ...prev,
       files: prev.files.filter((f) => f.id !== fileId)
     }));
+    setPdfFile(null);
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    const generatedId = `REWARD-2026-${Math.floor(1000 + Math.random() * 9000)}`;
-    setSubmissionId(generatedId);
-    setIsSubmitted(true);
-    confetti({
-      particleCount: 80,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#F07E26', '#FED27A', '#111827', '#984800']
-    });
+    setSubmitError('');
+
+    if (!pdfFile) {
+      setSubmitError('Bitte lade zuerst eine PDF hoch.');
+      setStep(3);
+      return;
+    }
+    if (!GAS_ENDPOINT || !GAS_TOKEN) {
+      setSubmitError('Der Einreichungs-Dienst ist noch nicht konfiguriert. Bitte wende dich an das RE\\WARD-Team.');
+      return;
+    }
+
+    setIsSubmitting(true);
     try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch {}
+      const base64 = await fileToBase64(pdfFile);
+      const payload = {
+        token: GAS_TOKEN,
+        data: {
+          projectName: formData.projectName,
+          organization: formData.organization,
+          legalForm: formData.legalForm,
+          contactName: formData.contactName,
+          email: formData.email,
+          leipzigConnection: formData.leipzigConnection,
+          materialProblem: formData.materialProblem,
+          customer: formData.customer,
+          maturity: formData.maturity
+        },
+        pdf: { name: pdfFile.name, type: pdfFile.type || 'application/pdf', base64 }
+      };
+
+      const res = await fetch(GAS_ENDPOINT, {
+        method: 'POST',
+        // text/plain vermeidet einen CORS-Preflight, den Apps-Script-Web-Apps nicht sauber unterstützen.
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(payload)
+      });
+      const result = await res.json();
+      if (!result.ok) {
+        throw new Error(result.error || 'Unbekannter Fehler beim Speichern.');
+      }
+
+      setSubmissionId(result.id);
+      setIsSubmitted(true);
+      confetti({
+        particleCount: 80,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#F07E26', '#FED27A', '#111827', '#984800']
+      });
+      try {
+        localStorage.removeItem(STORAGE_KEY);
+      } catch {}
+    } catch {
+      setSubmitError('Die Bewerbung konnte nicht übermittelt werden. Bitte versuche es erneut oder schreib uns direkt eine E-Mail.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const formatFileSize = (bytes: number) => {
@@ -644,6 +709,12 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
                 </span>
               </label>
             </div>
+
+            {submitError && (
+              <div className="p-3 bg-red-50 border border-red-300 corner-cut text-label text-red-700">
+                {submitError}
+              </div>
+            )}
           </div>
         )}
 
@@ -674,11 +745,11 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
           ) : (
             <button
               type="submit"
-              disabled={!formData.agreedToTerms || !formData.agreedToDataPrivacy}
+              disabled={!formData.agreedToTerms || !formData.agreedToDataPrivacy || isSubmitting}
               className="btn-editorial-primary disabled:opacity-50 disabled:cursor-not-allowed"
             >
               <Sparkles className="w-4 h-4 text-[#FED27A]" />
-              <span>Bewerbung jetzt verbindlich absenden</span>
+              <span>{isSubmitting ? 'Wird übermittelt …' : 'Bewerbung jetzt verbindlich absenden'}</span>
             </button>
           )}
         </div>
