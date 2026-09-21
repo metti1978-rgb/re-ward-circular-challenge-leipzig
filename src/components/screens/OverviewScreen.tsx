@@ -332,6 +332,8 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
         </section>
       </div>
 
+      <PhotoStrip />
+
       {/* 2. WAS WIR SUCHEN — Fläche: weiß */}
       <section
         id="was-wir-suchen"
@@ -504,8 +506,6 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           </div>
         </div>
       </section>
-
-      <PhotoStrip />
 
       {/* 5. SAVE THE DATE — Fläche: ink (dunkel) */}
       <section
