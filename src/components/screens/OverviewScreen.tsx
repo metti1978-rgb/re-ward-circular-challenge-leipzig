@@ -12,6 +12,7 @@ import {
 } from '../../data/awardData';
 import { Check, X, ArrowUpRight, MapPin, Calendar } from 'lucide-react';
 import confetti from 'canvas-confetti';
+import { PhotoStrip } from '../PhotoStrip';
 
 interface OverviewScreenProps {
   onNavigate: (screen: ScreenId) => void;
@@ -503,6 +504,8 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           </div>
         </div>
       </section>
+
+      <PhotoStrip />
 
       {/* 5. SAVE THE DATE — Fläche: ink (dunkel) */}
       <section

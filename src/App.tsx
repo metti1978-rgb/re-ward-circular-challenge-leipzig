@@ -3,7 +3,6 @@ import { ScreenId } from './types';
 import { ScreenSwitcherBar } from './components/ScreenSwitcherBar';
 import { Header } from './components/Header';
 import { Footer } from './components/Footer';
-import { PhotoStrip } from './components/PhotoStrip';
 import { OverviewScreen } from './components/screens/OverviewScreen';
 import { SubmissionPortalScreen } from './components/screens/SubmissionPortalScreen';
 import { LegalPageScreen } from './components/screens/LegalPageScreen';
@@ -75,7 +74,6 @@ export default function App() {
                 <Header currentScreen={currentScreen} onNavigate={handleNavigate} />
               </div>
               <main className="flex-1">{renderActiveScreen()}</main>
-              <PhotoStrip />
               <Footer onNavigate={handleNavigate} />
             </div>
 
@@ -91,7 +89,6 @@ export default function App() {
             <Header currentScreen={currentScreen} onNavigate={handleNavigate} />
           </div>
           <main className="flex-1">{renderActiveScreen()}</main>
-          <PhotoStrip />
           <Footer onNavigate={handleNavigate} />
         </div>
       )}
