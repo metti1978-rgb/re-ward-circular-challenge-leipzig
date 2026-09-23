@@ -521,8 +521,8 @@ export const SubmissionPortalScreen: React.FC<SubmissionPortalScreenProps> = ({ 
                 <option value="Markt">Bereits im Markt</option>
               </select>
               <p className="text-label text-gray-500">
-                Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne
-                Marktperspektive passen nicht zu <strong className="font-bold">RE\WARD</strong>.
+                Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen nicht zu{' '}
+                <strong className="font-bold">RE\WARD</strong>.
               </p>
             </div>
           </div>

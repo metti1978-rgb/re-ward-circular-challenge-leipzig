@@ -29,7 +29,7 @@ const HERO_SLIDES = [
 
 const HERO_FACTS: { label: string; value: string; hint: string; accent?: boolean }[] = [
   { label: 'Preisgeld', value: '9.000 €', hint: 'gestaffelt' },
-  { label: 'Extra', value: 'Wiederschön', hint: 'Mietfläche für den 1. Platz' },
+  { label: 'Extra', value: 'Wiederschön', hint: 'Mietfläche für alle 3 Plätze' },
   { label: 'Bewerbung', value: '23. Okt', hint: 'Bewerbungsschluss 2026', accent: true },
   { label: 'Pitch', value: 'November', hint: 'Pitch-Event in Leipzig' },
 ];
@@ -48,7 +48,7 @@ const FAQ_ITEMS: { question: string; answer: string }[] = [
   {
     question: 'Muss meine Lösung schon fertig sein?',
     answer:
-      'Nein, aber sie sollte mindestens als Prototyp existieren — besser schon pilotfähig sein. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen nicht zu RE\\WARD.',
+      'Nein — auch reine Gründungsideen sind willkommen. Einzelstücke aus Restmaterial und Studien ohne Marktperspektive passen allerdings nicht zu RE\\WARD.',
   },
   {
     question: 'Was passiert nach der Bewerbung?',
@@ -386,7 +386,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                 ))}
               </div>
               <p className="text-label text-white/80">
-                Deine Lösung sollte mindestens als Prototyp existieren — besser schon pilotfähig sein.
+                Auch reine Gründungsideen ohne fertigen Prototyp sind willkommen.
               </p>
             </div>
           </div>
@@ -632,7 +632,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     }`}
                   >
                     <div className={`font-condensed font-bold leading-none text-h4 ${isActive ? 'text-white' : 'text-[#111827]'}`}>
-                      Phase {String(index + 1).padStart(2, '0')}
+                      {item.step}
                     </div>
 
                     <span

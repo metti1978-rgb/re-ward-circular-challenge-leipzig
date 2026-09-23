@@ -1,11 +1,13 @@
 import React from 'react';
 import { ScreenId } from '../../types';
 import { ArrowUpRight } from 'lucide-react';
+import { LegalBlock } from '../../data/legalContent';
 
 interface LegalPageScreenProps {
   onNavigate: (screen: ScreenId) => void;
   eyebrow: string;
   title: string;
+  content?: LegalBlock[];
 }
 
 const tagClass =
@@ -18,7 +20,39 @@ const BLINDTEXT_PARAGRAPHS = [
   'Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt. Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet.',
 ];
 
-export const LegalPageScreen: React.FC<LegalPageScreenProps> = ({ onNavigate, eyebrow, title }) => {
+const DEFAULT_CONTENT: LegalBlock[] = BLINDTEXT_PARAGRAPHS.map((text) => ({ type: 'paragraph', text }));
+
+// Verwandelt E-Mail-Adressen und https-Links im Fließtext in klickbare Links.
+const linkify = (text: string): React.ReactNode[] =>
+  text.split(/(https?:\/\/[^\s]+|[\w.+-]+@[\w-]+\.[\w.-]+)/g).map((part, i) => {
+    if (/^https?:\/\//.test(part)) {
+      return (
+        <a key={i} href={part} target="_blank" rel="noopener noreferrer" className="underline hover:text-[#F07E26]">
+          {part}
+        </a>
+      );
+    }
+    if (/^[\w.+-]+@[\w-]+\.[\w.-]+$/.test(part)) {
+      return (
+        <a key={i} href={`mailto:${part}`} className="underline hover:text-[#F07E26]">
+          {part}
+        </a>
+      );
+    }
+    return part;
+  });
+
+const renderMultiline = (text: string) =>
+  text.split('\n').map((line, i, arr) => (
+    <React.Fragment key={i}>
+      {linkify(line)}
+      {i < arr.length - 1 && <br />}
+    </React.Fragment>
+  ));
+
+export const LegalPageScreen: React.FC<LegalPageScreenProps> = ({ onNavigate, eyebrow, title, content }) => {
+  const blocks = content ?? DEFAULT_CONTENT;
+
   return (
     <section
       className="w-full py-14 sm:py-20 px-3 sm:px-6"
@@ -29,11 +63,31 @@ export const LegalPageScreen: React.FC<LegalPageScreenProps> = ({ onNavigate, ey
         <h2 className="uppercase text-[#111827] text-h2 mb-8">{title}</h2>
 
         <div className="space-y-4 text-left w-full">
-          {BLINDTEXT_PARAGRAPHS.map((paragraph, i) => (
-            <p key={i} className="text-gray-700 text-body leading-relaxed">
-              {paragraph}
-            </p>
-          ))}
+          {blocks.map((block, i) => {
+            if (block.type === 'heading') {
+              return (
+                <h3 key={i} className="text-[#111827] text-h5 font-semibold pt-2 first:pt-0">
+                  {block.text}
+                </h3>
+              );
+            }
+            if (block.type === 'list') {
+              return (
+                <ul key={i} className="list-disc pl-5 space-y-1">
+                  {block.items.map((item, j) => (
+                    <li key={j} className="text-gray-700 text-body leading-relaxed">
+                      {linkify(item)}
+                    </li>
+                  ))}
+                </ul>
+              );
+            }
+            return (
+              <p key={i} className="text-gray-700 text-body leading-relaxed">
+                {renderMultiline(block.text)}
+              </p>
+            );
+          })}
         </div>
 
         <button

@@ -18,15 +18,17 @@ export const PRIZES: PrizeTier[] = [
     place: 'Erster Preis',
     amount: '5.000 €',
     description:
-      'plus eine Mietfläche im Wiederschön, Leipzigs Second Life Concept Store. Also nicht nur Geld, sondern ein Ort, an dem deine Lösung Kundschaft trifft.'
+      'plus eine Mietfläche im Wiederschön, Leipzigs Second Life Concept Store, sowie Zugang zur SpinLab-Academy.'
   },
   {
     place: 'Zweiter Preis',
-    amount: '3.000 €'
+    amount: '3.000 €',
+    description: 'plus eine Mietfläche im Wiederschön, Leipzigs Second Life Concept Store.'
   },
   {
     place: 'Dritter Preis',
-    amount: '1.000 €'
+    amount: '1.000 €',
+    description: 'plus eine Mietfläche im Wiederschön, Leipzigs Second Life Concept Store.'
   }
 ];
 
@@ -61,12 +63,12 @@ export const MATERIAL_STREAMS: string[] = [
 ];
 
 export const NOT_FITTING: string[] = [
-  'reine Ideen ohne Prototyp',
   'Einzelstücke aus Restmaterial',
   'Studien ohne Marktperspektive'
 ];
 
 export const TARGET_GROUPS: string[] = [
+  'Gründungsideen',
   'Startups',
   'Kleine und mittlere Unternehmen',
   'Handwerksbetriebe',
@@ -98,19 +100,19 @@ export const TIMELINE: TimelineMilestone[] = [
     location: 'Digitales Bewerbungsformular'
   },
   {
-    step: 'PHASE 02',
+    step: 'SCHRITT 1 DER AUSWAHL',
     date: 'bis 30. Oktober 2026',
-    title: 'Sichtung & Shortlist-Benachrichtigung',
+    title: 'Jury-Auswahl: Shortlist',
     status: 'upcoming',
-    description: 'Wir sichten alle Bewerbungen und melden uns bei den Shortlist-Teams, die beim Pitch-Event vortragen.',
+    description: 'Die Jury sichtet alle Bewerbungen und wählt die Shortlist-Teams aus, die im zweiten Schritt live pitchen.',
   },
   {
-    step: 'PHASE 03',
+    step: 'SCHRITT 2 DER AUSWAHL',
     date: 'November 2026 · Leipzig',
-    title: 'Pitch-Veranstaltung & Preisverleihung',
+    title: 'Finale: Pitch vor Publikum',
     status: 'upcoming',
     description:
-      'Die besten eingereichten Konzepte werden live vorgestellt — vor Jury, Fachpublikum, potenziellen Partnern und Presse. Danach werden die Preise verliehen.',
+      'Die Shortlist-Teams präsentieren live vor Jury, Fachpublikum, potenziellen Partnern und Presse. Danach werden die Preise verliehen.',
     location: 'Leipzig'
   }
 ];
