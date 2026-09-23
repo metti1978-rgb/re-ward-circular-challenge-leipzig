@@ -472,7 +472,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     idx === 0 ? 'bg-[#FED27A]/25' : 'bg-[#F8F9FA]'
                   }`}
                 >
-                  <div className="font-condensed font-bold leading-none text-h4 text-[#111827]">{idx + 1}</div>
+                  <div className={`${tagClass} text-[#F07E26]`}>{idx + 1}</div>
                   <div className={`${tagClass} text-gray-500`}>{prize.place}</div>
                   <div className="text-h2 font-semibold text-[#111827]">{prize.amount}</div>
                   {prize.description && (
