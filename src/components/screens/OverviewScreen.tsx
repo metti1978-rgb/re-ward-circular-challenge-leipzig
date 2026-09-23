@@ -617,7 +617,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           <div className="relative w-full sm:w-2/3 sm:mx-auto">
             <div
               className="hidden md:block absolute left-0 right-0 h-px bg-[#111827]/30"
-              style={{ top: '3.5rem' }}
+              style={{ top: '5rem' }}
             ></div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
@@ -637,12 +637,12 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
                     <span
                       className={`hidden md:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full z-10 transition-colors duration-200 ${
-                        isActive ? 'bg-white' : 'bg-[#111827]'
+                        isActive ? 'bg-white' : 'bg-[#111827]/30'
                       }`}
-                      style={{ top: '3.5rem' }}
+                      style={{ top: '5rem' }}
                     ></span>
 
-                    <div className="mt-6 md:mt-8 space-y-2 w-full min-w-0">
+                    <div className="mt-6 md:mt-12 space-y-2 w-full min-w-0">
                       <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#111827]'}`}>
                         {item.date}
                       </div>
