@@ -638,6 +638,9 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                       isActive ? 'bg-[#F07E26] border-[#F07E26]' : 'border-transparent'
                     }`}
                   >
+                    <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#F07E26]'}`}>
+                      {index + 1}
+                    </div>
                     <div className={`font-condensed font-bold leading-none text-h4 ${isActive ? 'text-white' : 'text-[#111827]'}`}>
                       {item.step}
                     </div>
@@ -652,9 +655,6 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     <div className="mt-6 md:mt-16 space-y-2 w-full min-w-0">
                       <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#111827]'}`}>
                         {item.date}
-                      </div>
-                      <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#F07E26]'}`}>
-                        {index + 1}
                       </div>
                       <h3 className={`text-h6 font-semibold ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.title}</h3>
                       <p className={`text-body whitespace-pre-line ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.description}</p>
