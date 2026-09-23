@@ -653,7 +653,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                         {item.date}
                       </div>
                       <h3 className={`text-h6 font-semibold ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.title}</h3>
-                      <p className={`text-body ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.description}</p>
+                      <p className={`text-body whitespace-pre-line ${isActive ? 'text-white' : 'text-[#111827]'}`}>{item.description}</p>
 
                       {item.location && (
                         <div className={`text-label font-condensed pt-2 flex items-center justify-center gap-1 ${isActive ? 'text-white' : 'text-[#111827]'}`}>
