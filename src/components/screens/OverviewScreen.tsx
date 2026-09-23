@@ -468,7 +468,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
               {PRIZES.map((prize, idx) => (
                 <div
                   key={prize.place}
-                  className={`p-6 border border-[#111827] corner-cut flex flex-col items-center text-center gap-3 ${
+                  className={`px-6 pb-6 pt-10 border border-[#111827] corner-cut flex flex-col items-center text-center gap-3 ${
                     idx === 0 ? 'bg-[#FED27A]/25' : 'bg-[#F8F9FA]'
                   }`}
                 >
