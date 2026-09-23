@@ -91,9 +91,9 @@ export const LEIPZIG_CONNECTION_EXAMPLES: string[] = [
 
 export const TIMELINE: TimelineMilestone[] = [
   {
-    step: 'PHASE 01',
+    step: 'BEWERBUNG',
     date: 'bis 23. Oktober 2026',
-    title: 'Bewerbung',
+    title: 'Du bist dran',
     status: 'active',
     description:
       'Offener Call für marktfähige Repair-, Reuse-, Repurpose-, Recycling- und Rethink-Lösungen. Einreichung über das RE\\WARD Bewerbungsformular, rund 10 Minuten.',
