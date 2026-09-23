@@ -616,7 +616,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
           {/* Offene Zeitachse, zentriert, ohne Kästen, durchgehende Linie mit mittigem Punkt je Spalte */}
           <div className="relative w-full sm:w-2/3 sm:mx-auto">
             <div
-              className="hidden md:block absolute left-0 right-0 h-[2px] bg-[#111827]"
+              className="hidden md:block absolute left-0 right-0 h-px bg-[#111827]/30"
               style={{ top: '3.5rem' }}
             ></div>
 

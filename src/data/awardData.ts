@@ -100,14 +100,14 @@ export const TIMELINE: TimelineMilestone[] = [
     location: 'Digitales Bewerbungsformular'
   },
   {
-    step: 'SCHRITT 1 DER AUSWAHL',
+    step: 'VORAUSWAHL',
     date: 'bis 30. Oktober 2026',
     title: 'Jury-Auswahl: Shortlist',
     status: 'upcoming',
     description: 'Die Jury sichtet alle Bewerbungen und wählt die Shortlist-Teams aus, die im zweiten Schritt live pitchen.',
   },
   {
-    step: 'SCHRITT 2 DER AUSWAHL',
+    step: 'FINALAUSWAHL',
     date: 'November 2026 · Leipzig',
     title: 'Finale: Pitch vor Publikum',
     status: 'upcoming',
