@@ -480,7 +480,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   {idx === 0 && (
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 pt-2 w-full">
                       <img src="/assets/LO WS.svg" alt="Wiederschön" className="h-6 w-auto" />
-                      <img src="/assets/LO spinlab.webp" alt="SpinLab — The HHL Accelerator" className="h-6 w-auto invert" />
+                      <img src="/assets/LO spinlab.webp" alt="SpinLab — The HHL Accelerator" className="h-[34px] w-auto invert" />
                     </div>
                   )}
                 </div>
