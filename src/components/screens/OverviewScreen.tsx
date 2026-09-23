@@ -480,8 +480,24 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   )}
                   {idx === 0 && (
                     <div className="flex flex-col items-center justify-center gap-4 pt-4 pb-2 w-full">
-                      <img src="/assets/LO WS.svg" alt="Wiederschön" className="h-6 w-auto" />
-                      <img src="/assets/LO spinlab.webp" alt="SpinLab — The HHL Accelerator" className="h-[34px] w-auto invert" />
+                      <a
+                        href="https://www.wiederschoen-leipzig.de"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Wiederschön (öffnet in neuem Fenster)"
+                        className="transition-transform duration-200 hover:scale-95"
+                      >
+                        <img src="/assets/LO WS.svg" alt="Wiederschön" className="h-6 w-auto" />
+                      </a>
+                      <a
+                        href="https://spinlab.co"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="SpinLab — The HHL Accelerator (öffnet in neuem Fenster)"
+                        className="transition-transform duration-200 hover:scale-95"
+                      >
+                        <img src="/assets/LO spinlab.webp" alt="SpinLab — The HHL Accelerator" className="h-[34px] w-auto invert" />
+                      </a>
                     </div>
                   )}
                 </div>
