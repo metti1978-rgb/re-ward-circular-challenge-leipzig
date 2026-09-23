@@ -25,7 +25,7 @@ export const IMPRESSUM_CONTENT: LegalBlock[] = [
     text: 'Claudia Ballhause, Pressesprecherin\nStadtreinigung Leipzig, Geithainer Straße 60, 04328 Leipzig'
   },
   { type: 'heading', text: 'Konzeption, Gestaltung & Umsetzung' },
-  { type: 'paragraph', text: 'TNC Production GmbH\nWaldstraße 27\n04105 Leipzig' },
+  { type: 'paragraph', text: 'TNC Production GmbH\nGottschedstraße 12\n04109 Leipzig\nwww.tnc-group.de' },
   { type: 'heading', text: 'EU-Streitschlichtung' },
   {
     type: 'paragraph',
@@ -82,7 +82,7 @@ export const DATENSCHUTZ_CONTENT: LegalBlock[] = [
   { type: 'heading', text: '5. Hosting/Auftragsverarbeitung' },
   {
     type: 'paragraph',
-    text: 'Diese Website sowie das Bewerbungsformular werden auf Servern der TNC Production GmbH, Waldstraße 27, 04105 Leipzig, betrieben. TNC verarbeitet die Daten in unserem Auftrag als Auftragsverarbeiter gemäß Art. 28 DSGVO auf Grundlage eines entsprechenden Auftragsverarbeitungsvertrags.'
+    text: 'Diese Website sowie das Bewerbungsformular werden auf Servern der TNC Production GmbH, Gottschedstraße 12, 04109 Leipzig, betrieben. TNC verarbeitet die Daten in unserem Auftrag als Auftragsverarbeiter gemäß Art. 28 DSGVO auf Grundlage eines entsprechenden Auftragsverarbeitungsvertrags.'
   },
   { type: 'heading', text: '6. Ihre Rechte' },
   {
