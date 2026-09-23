@@ -642,7 +642,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                       style={{ top: '5rem' }}
                     ></span>
 
-                    <div className="mt-6 md:mt-12 space-y-2 w-full min-w-0">
+                    <div className="mt-6 md:mt-16 space-y-2 w-full min-w-0">
                       <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#111827]'}`}>
                         {item.date}
                       </div>
