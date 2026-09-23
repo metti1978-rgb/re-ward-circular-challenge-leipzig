@@ -637,7 +637,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
                     {!isActive && (
                       <span
-                        className="hidden md:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-3 rounded-full z-10 bg-[#111827]/30"
+                        className="hidden md:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-3 rounded-full z-10 bg-[#B8BABE]"
                         style={{ top: '5rem' }}
                       ></span>
                     )}
