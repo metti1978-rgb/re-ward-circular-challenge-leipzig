@@ -468,7 +468,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
               {PRIZES.map((prize, idx) => (
                 <div
                   key={prize.place}
-                  className={`px-6 pb-6 pt-10 border border-[#111827] corner-cut flex flex-col items-center text-center gap-3 ${
+                  className={`p-6 border border-[#111827] corner-cut flex flex-col items-center text-center gap-3 ${
                     idx === 0 ? 'bg-[#FED27A]/25' : 'bg-[#F8F9FA]'
                   }`}
                 >
@@ -634,7 +634,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   <div
                     key={index}
                     onClick={() => setSelectedPhase(index)}
-                    className={`relative flex flex-col items-center text-center pt-1 pb-6 px-6 corner-cut border-2 transition-colors duration-200 cursor-pointer ${
+                    className={`relative flex flex-col items-center text-center pt-6 pb-6 px-6 corner-cut border-2 transition-colors duration-200 cursor-pointer ${
                       isActive ? 'bg-[#F07E26] border-[#F07E26]' : 'border-transparent'
                     }`}
                   >
