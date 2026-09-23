@@ -635,12 +635,12 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                       {item.step}
                     </div>
 
-                    <span
-                      className={`hidden md:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full z-10 transition-colors duration-200 ${
-                        isActive ? 'bg-white' : 'bg-[#111827]/30'
-                      }`}
-                      style={{ top: '5rem' }}
-                    ></span>
+                    {!isActive && (
+                      <span
+                        className="hidden md:block absolute left-1/2 -translate-x-1/2 -translate-y-1/2 w-8 h-3 rounded-full z-10 bg-[#111827]/30"
+                        style={{ top: '5rem' }}
+                      ></span>
+                    )}
 
                     <div className="mt-6 md:mt-16 space-y-2 w-full min-w-0">
                       <div className={`${tagClass} ${isActive ? 'text-white' : 'text-[#111827]'}`}>
