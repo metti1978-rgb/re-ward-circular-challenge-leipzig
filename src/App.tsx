@@ -7,7 +7,7 @@ import { PhotoStrip } from './components/PhotoStrip';
 import { OverviewScreen } from './components/screens/OverviewScreen';
 import { SubmissionPortalScreen } from './components/screens/SubmissionPortalScreen';
 import { LegalPageScreen } from './components/screens/LegalPageScreen';
-import { IMPRESSUM_CONTENT, DATENSCHUTZ_CONTENT } from './data/legalContent';
+import { IMPRESSUM_CONTENT, DATENSCHUTZ_CONTENT, TEILNAHMEBEDINGUNGEN_CONTENT } from './data/legalContent';
 
 export default function App() {
   const [currentScreen, setCurrentScreen] = useState<ScreenId>('overview');
@@ -41,7 +41,7 @@ export default function App() {
       case 'datenschutz':
         return <LegalPageScreen onNavigate={handleNavigate} eyebrow="Rechtliches" title="Datenschutz" content={DATENSCHUTZ_CONTENT} />;
       case 'teilnahmebedingungen':
-        return <LegalPageScreen onNavigate={handleNavigate} eyebrow="Rechtliches" title="Teilnahmebedingungen" />;
+        return <LegalPageScreen onNavigate={handleNavigate} eyebrow="Rechtliches" title="Teilnahmebedingungen" content={TEILNAHMEBEDINGUNGEN_CONTENT} />;
       default:
         return <OverviewScreen onNavigate={handleNavigate} />;
     }

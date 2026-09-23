@@ -100,3 +100,84 @@ export const DATENSCHUTZ_CONTENT: LegalBlock[] = [
     text: 'Diese Datenschutzerklärung ist aktuell gültig (Stand: September 2026). Durch die Weiterentwicklung der Website können Anpassungen erforderlich werden.'
   }
 ];
+
+export const TEILNAHMEBEDINGUNGEN_CONTENT: LegalBlock[] = [
+  { type: 'heading', text: '1. Veranstalter' },
+  {
+    type: 'paragraph',
+    text: 'Wiederschön Leipzig, ein Projekt der Stadtreinigung Leipzig, Eigenbetrieb der Stadt Leipzig, Geithainer Straße 60, 04328 Leipzig (im Folgenden „Veranstalter"). Konzeption und Durchführung erfolgen in Zusammenarbeit mit der TNC Production GmbH. Fragen zum Wettbewerb: kontakt@reward-leipzig.de'
+  },
+  { type: 'heading', text: '2. Gegenstand des Wettbewerbs' },
+  {
+    type: 'paragraph',
+    text: 'RE\\WARD sucht marktfähige Produkte, Dienstleistungen und Geschäftsmodelle für Repair, Reuse, Repurpose, Recycling und Rethink – offen für jeden Stoffstrom, mit einem klaren Bezug zu Leipzig. Die Bewertung erfolgt anhand des Kriterienpapiers Marktfähigkeit (10 Kriterien, jeweils 0–5 Punkte, max. 50 Punkte).'
+  },
+  { type: 'heading', text: '3. Teilnahmeberechtigung' },
+  {
+    type: 'paragraph',
+    text: 'Teilnehmen können Startups, kleine und mittlere Unternehmen, Handwerksbetriebe, Sozialunternehmen, Entsorger, Recyclingunternehmen, Hersteller, Händler, Forschungsteams mit Praxispartner sowie Konsortien aus mehreren Partnern – deutschlandweit, sofern ein klarer Bezug zu Leipzig besteht (z. B. Umsetzung vor Ort, Projektpartner aus der Stadt, Nutzung Leipziger Stoffströme/Testumgebungen, Forschungsbezug oder Lösung eines konkreten Leipziger Problems). Die eingereichte Lösung muss mindestens als Prototyp existieren. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive sind von der Teilnahme ausgeschlossen.'
+  },
+  { type: 'heading', text: '4. Ausschluss von der Teilnahme' },
+  {
+    type: 'paragraph',
+    text: 'Von der Teilnahme ausgeschlossen sind Mitarbeitende des Veranstalters und der TNC Production GmbH, Mitglieder der Jury sowie deren jeweilige Angehörige.'
+  },
+  { type: 'heading', text: '5. Bewerbungszeitraum und -verfahren' },
+  {
+    type: 'paragraph',
+    text: 'Bewerbungen können bis Freitag, 23.10.2026, 23:59 Uhr, über das Online-Formular auf reward-leipzig.de eingereicht werden. Erforderlich sind Kontaktdaten, Angaben zum Konzept sowie ein PDF mit maximal 3 Seiten. Nach Ablauf der Frist eingehende Bewerbungen werden nicht berücksichtigt.'
+  },
+  { type: 'heading', text: '6. Bewertungsverfahren' },
+  {
+    type: 'paragraph',
+    text: 'Die Sichtung erfolgt bis zum 30.10.2026. Die Jury setzt sich aus Entscheider:innen der Stadt Leipzig sowie aus dem Partner- und Expertennetzwerk von RE\\WARD zusammen; die konkrete Zusammensetzung wird zu gegebener Zeit bekanntgegeben. Jury-Entscheidungen sind endgültig.'
+  },
+  { type: 'heading', text: '7. Pitch-Event' },
+  {
+    type: 'paragraph',
+    text: 'Die auf die Shortlist gewählten Teams pitchen im November 2026 in Leipzig persönlich vor Jury, Fachpublikum, potenziellen Partnern und Presse; der genaue Termin wird noch bekanntgegeben. Teilnehmende verpflichten sich, sich diesen Termin bereits mit der Bewerbung vorzumerken.'
+  },
+  { type: 'heading', text: '8. Preise' },
+  {
+    type: 'list',
+    items: [
+      '1. Platz: 5.000 € sowie eine Mietfläche im Wiederschön Leipzig',
+      '2. Platz: 3.000 €',
+      '3. Platz: 1.000 €'
+    ]
+  },
+  {
+    type: 'paragraph',
+    text: 'Alle Teams im Finale erhalten zusätzlich: Kontakt zu potenziellen Erstkunden, Vermittlung an Umsetzungspartner sowie Sichtbarkeit auf der Pitch-Bühne und in der Berichterstattung. Für die Mietfläche als Teil des 1. Preises gilt ein gesonderter Mietvertrag mit dem Betreiber. Etwaige steuerliche Pflichten im Zusammenhang mit dem Preisgeld liegen bei den Gewinner:innen.'
+  },
+  { type: 'heading', text: '9. Nutzungsrechte an eingereichten Konzepten' },
+  {
+    type: 'paragraph',
+    text: 'Die eingereichten Konzepte werden ausschließlich im Rahmen des Wettbewerbs genutzt (Sichtung, Jury-Bewertung, Präsentation beim Pitch-Event). Eine darüberhinausgehende Nutzung der Konzepte durch den Veranstalter findet nicht statt.'
+  },
+  { type: 'heading', text: '10. Bild- und Pressefreigaben' },
+  {
+    type: 'paragraph',
+    text: 'Teilnehmende erklären sich damit einverstanden, dass im Rahmen des Wettbewerbs, insbesondere beim Pitch-Event, angefertigte Foto- und Videoaufnahmen durch den Veranstalter für die Öffentlichkeitsarbeit (Website, Social Media, Pressemitteilungen) im Zusammenhang mit RE\\WARD genutzt werden dürfen.'
+  },
+  { type: 'heading', text: '11. Datenschutz' },
+  {
+    type: 'paragraph',
+    text: 'Informationen zur Verarbeitung personenbezogener Daten finden sich in der Datenschutzerklärung unter reward-leipzig.de/datenschutz.'
+  },
+  { type: 'heading', text: '12. Haftung' },
+  {
+    type: 'paragraph',
+    text: 'Der Veranstalter übernimmt keine Haftung für verspätete, unvollständige oder aufgrund technischer Störungen nicht zugestellte Bewerbungen. Eine Haftung des Veranstalters ist ausgeschlossen, soweit sie nicht auf Vorsatz oder grober Fahrlässigkeit beruht oder gesetzlich zwingend vorgeschrieben ist.'
+  },
+  { type: 'heading', text: '13. Änderung, Verschiebung oder Absage des Wettbewerbs' },
+  {
+    type: 'paragraph',
+    text: 'Der Veranstalter behält sich vor, den Wettbewerb aus wichtigem Grund zu ändern, zeitlich zu verschieben oder abzusagen.'
+  },
+  { type: 'heading', text: '14. Schlussbestimmungen' },
+  {
+    type: 'paragraph',
+    text: 'Der Rechtsweg ist ausgeschlossen. Es gilt das Recht der Bundesrepublik Deutschland. Gerichtsstand ist, soweit gesetzlich zulässig, Leipzig.'
+  }
+];
