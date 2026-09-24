@@ -1,15 +1,15 @@
-// Baut die Seite und lädt den dist/-Ordner per FTP(S) zu Strato hoch.
+// Baut die Seite und lädt den dist/-Ordner per SFTP zu Strato hoch.
 // Zugangsdaten kommen aus .env.local (nie committen):
-//   STRATO_FTP_HOST=ftp.deinedomain.de
+//   STRATO_FTP_HOST=5159127.ssh.w1.strato.hosting
 //   STRATO_FTP_USER=dein-ftp-benutzername
 //   STRATO_FTP_PASSWORD=dein-ftp-passwort
-//   STRATO_FTP_REMOTE_DIR=/ (Zielordner im Webspace, meist "/" oder "/htdocs")
-//   STRATO_FTP_SECURE=true (auf "false" setzen, falls Strato kein FTPS anbietet)
+//   STRATO_FTP_REMOTE_DIR=/ReWard (Zielordner im Webspace)
+//   STRATO_FTP_PORT=22 (optional, Standard ist 22)
 //
 // Aufruf: npm run deploy:strato
 
 import { config as loadEnv } from 'dotenv';
-import * as ftp from 'basic-ftp';
+import SftpClient from 'ssh2-sftp-client';
 import path from 'path';
 import { existsSync } from 'fs';
 
@@ -21,12 +21,12 @@ const {
   STRATO_FTP_USER,
   STRATO_FTP_PASSWORD,
   STRATO_FTP_REMOTE_DIR,
-  STRATO_FTP_SECURE,
+  STRATO_FTP_PORT,
 } = process.env;
 
 if (!STRATO_FTP_HOST || !STRATO_FTP_USER || !STRATO_FTP_PASSWORD) {
   console.error(
-    'Fehlende FTP-Zugangsdaten. Bitte in .env.local setzen: STRATO_FTP_HOST, STRATO_FTP_USER, STRATO_FTP_PASSWORD.'
+    'Fehlende Zugangsdaten. Bitte in .env.local setzen: STRATO_FTP_HOST, STRATO_FTP_USER, STRATO_FTP_PASSWORD.'
   );
   process.exit(1);
 }
@@ -38,28 +38,29 @@ if (!existsSync(localDir)) {
 }
 
 const remoteDir = STRATO_FTP_REMOTE_DIR && STRATO_FTP_REMOTE_DIR.trim() !== '' ? STRATO_FTP_REMOTE_DIR : '/';
-const secure = STRATO_FTP_SECURE !== 'false';
+const port = STRATO_FTP_PORT ? Number(STRATO_FTP_PORT) : 22;
 
-const client = new ftp.Client();
-client.ftp.verbose = true;
+const sftp = new SftpClient();
 
 try {
-  console.log(`Verbinde mit ${STRATO_FTP_HOST} (FTPS: ${secure}) ...`);
-  await client.access({
+  console.log(`Verbinde per SFTP mit ${STRATO_FTP_HOST}:${port} ...`);
+  await sftp.connect({
     host: STRATO_FTP_HOST,
-    user: STRATO_FTP_USER,
+    port,
+    username: STRATO_FTP_USER,
     password: STRATO_FTP_PASSWORD,
-    secure,
   });
 
   console.log(`Lade dist/ nach ${remoteDir} hoch ...`);
-  await client.ensureDir(remoteDir);
-  await client.uploadFromDir(localDir);
+  await sftp.mkdir(remoteDir, true);
+  await sftp.uploadDir(localDir, remoteDir, {
+    filter: (itemPath) => path.basename(itemPath) !== '.DS_Store',
+  });
 
   console.log('Deploy abgeschlossen.');
 } catch (err) {
-  console.error('Deploy fehlgeschlagen:', err);
+  console.error('Deploy fehlgeschlagen:', err.message || err);
   process.exitCode = 1;
 } finally {
-  client.close();
+  await sftp.end();
 }
