@@ -115,7 +115,7 @@ export const TEILNAHMEBEDINGUNGEN_CONTENT: LegalBlock[] = [
   { type: 'heading', text: '3. Teilnahmeberechtigung' },
   {
     type: 'paragraph',
-    text: 'Teilnehmen können Startups, kleine und mittlere Unternehmen, Handwerksbetriebe, Sozialunternehmen, Entsorger, Recyclingunternehmen, Hersteller, Händler, Forschungsteams mit Praxispartner sowie Konsortien aus mehreren Partnern – deutschlandweit, sofern ein klarer Bezug zu Leipzig besteht (z. B. Umsetzung vor Ort, Projektpartner aus der Stadt, Nutzung Leipziger Stoffströme/Testumgebungen, Forschungsbezug oder Lösung eines konkreten Leipziger Problems). Die eingereichte Lösung muss mindestens als Prototyp existieren. Reine Ideen ohne Prototyp, Einzelstücke aus Restmaterial und Studien ohne Marktperspektive sind von der Teilnahme ausgeschlossen.'
+    text: 'Teilnehmen können Startups, kleine und mittlere Unternehmen, Handwerksbetriebe, Sozialunternehmen, Entsorger, Recyclingunternehmen, Hersteller, Händler, Forschungsteams mit Praxispartner sowie Konsortien aus mehreren Partnern – deutschlandweit, sofern ein klarer Bezug zu Leipzig besteht (z. B. Umsetzung vor Ort, Projektpartner aus der Stadt, Nutzung Leipziger Stoffströme/Testumgebungen, Forschungsbezug oder Lösung eines konkreten Leipziger Problems). Einzelstücke aus Restmaterial und Studien ohne Marktperspektive sind von der Teilnahme ausgeschlossen.'
   },
   { type: 'heading', text: '4. Ausschluss von der Teilnahme' },
   {

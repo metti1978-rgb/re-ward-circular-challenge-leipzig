@@ -48,7 +48,8 @@ export const SOLUTIONS_WE_SEEK: string[] = [
   'Rücknahmesysteme',
   'digitale Produktpässe',
   'Materialtracking',
-  'Nachweis- und Compliance-Tools'
+  'Nachweis- und Compliance-Tools',
+  'auch reine Gründungsideen ohne fertigen Prototyp'
 ];
 
 export const MATERIAL_STREAMS: string[] = [

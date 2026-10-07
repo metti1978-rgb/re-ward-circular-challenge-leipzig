@@ -174,10 +174,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                     className="w-full max-w-[25.92rem] sm:max-w-[35.64rem] md:max-w-[45.36rem] transition-transform duration-200 hover:scale-95"
                   />
                   <div className="text-center">
-                    <span className="block font-condensed font-semibold uppercase text-[#F07E26] text-h4 sm:text-h3">
-                      Ende September 2026
-                    </span>
-                    <p className="font-body uppercase tracking-[0.2em] leading-tight text-h4 sm:text-h3 mt-1">
+                    <p className="font-body uppercase tracking-[0.2em] leading-tight text-h4 sm:text-h3">
                       <span className="font-bold text-[#111827]">Die Circular Challenge</span>
                       <br />
                       <span className="font-light text-[#111827]">der Stadt Leipzig</span>
@@ -385,9 +382,6 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   </span>
                 ))}
               </div>
-              <p className="text-label text-white/80">
-                Auch reine Gründungsideen ohne fertigen Prototyp sind willkommen.
-              </p>
             </div>
           </div>
         </div>
