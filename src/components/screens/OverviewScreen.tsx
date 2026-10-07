@@ -696,17 +696,15 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-8 w-full">
             {JURY.map((member) => (
-              <div key={member.name} className="flex flex-col items-center gap-4">
+              <div key={member.name} className="row-span-3 grid grid-rows-subgrid gap-y-1 justify-items-center">
                 <img
                   src={member.photo}
                   alt={member.name}
                   loading="lazy"
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border border-[#111827]"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border border-[#111827] mb-3"
                 />
-                <div className="space-y-1">
-                  <h3 className="text-h6 font-semibold text-[#111827]">{member.name}</h3>
-                  <p className="text-label text-[#111827] leading-snug">{member.role}</p>
-                </div>
+                <h3 className="text-h6 font-semibold text-[#111827]">{member.name}</h3>
+                <p className="text-label text-[#111827] leading-snug">{member.role}</p>
               </div>
             ))}
           </div>
