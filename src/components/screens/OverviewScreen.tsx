@@ -163,7 +163,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                 >
                   <img
                     src="/assets/STD.svg"
-                    alt="Save the Date"
+                    alt="Jetzt bewerben und bis zu 5.000 Euro gewinnen"
                     onClick={fireConfetti}
                     className="w-full cursor-pointer transition-transform duration-200 hover:scale-95"
                   />
