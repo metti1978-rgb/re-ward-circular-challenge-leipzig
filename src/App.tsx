@@ -7,6 +7,7 @@ import { PhotoStrip } from './components/PhotoStrip';
 import { OverviewScreen } from './components/screens/OverviewScreen';
 import { SubmissionPortalScreen } from './components/screens/SubmissionPortalScreen';
 import { LegalPageScreen } from './components/screens/LegalPageScreen';
+import { RaupeGameScreen } from './components/screens/RaupeGameScreen';
 import { IMPRESSUM_CONTENT, DATENSCHUTZ_CONTENT, TEILNAHMEBEDINGUNGEN_CONTENT } from './data/legalContent';
 
 export default function App() {
@@ -42,6 +43,8 @@ export default function App() {
         return <LegalPageScreen onNavigate={handleNavigate} eyebrow="Rechtliches" title="Datenschutz" content={DATENSCHUTZ_CONTENT} />;
       case 'teilnahmebedingungen':
         return <LegalPageScreen onNavigate={handleNavigate} eyebrow="Rechtliches" title="Teilnahmebedingungen" content={TEILNAHMEBEDINGUNGEN_CONTENT} />;
+      case 'raupe':
+        return <RaupeGameScreen onNavigate={handleNavigate} />;
       default:
         return <OverviewScreen onNavigate={handleNavigate} />;
     }

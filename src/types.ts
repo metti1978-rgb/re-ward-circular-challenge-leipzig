@@ -1,4 +1,4 @@
-export type ScreenId = 'overview' | 'portal' | 'impressum' | 'datenschutz' | 'teilnahmebedingungen';
+export type ScreenId = 'overview' | 'portal' | 'impressum' | 'datenschutz' | 'teilnahmebedingungen' | 'raupe';
 
 export interface PrizeTier {
   place: string;
