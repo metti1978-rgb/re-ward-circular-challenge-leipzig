@@ -121,7 +121,7 @@ export const TIMELINE: TimelineMilestone[] = [
 export const JURY: { name: string; role: string; photo: string }[] = [
   {
     name: 'Sonja Wegge',
-    role: 'Leiterin evolis – Freiwilliges Sekretariat Zirkuläre Städte Deutschland evolvis',
+    role: 'Leiterin evolvis – Freiwilliges Sekretariat Zirkuläre Städte Deutschland',
     photo: '/assets/jury/sonja-wegge.jpg'
   },
   {
