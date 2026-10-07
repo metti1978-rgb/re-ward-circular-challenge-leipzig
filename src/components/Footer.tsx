@@ -9,7 +9,7 @@ interface FooterProps {
 export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
   return (
     <footer
-      className="relative w-full text-white pt-16 pb-12 px-3 sm:px-6"
+      className="w-full text-white pt-16 pb-12 px-3 sm:px-6"
       style={{ background: '#111827' }}
     >
       <div className="max-w-7xl mx-auto flex flex-col items-center text-center space-y-10">
@@ -72,21 +72,21 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
             Teilnahmebedingungen
             <span className="pointer-events-none absolute left-4 right-4 -bottom-0.5 h-[2px] origin-right scale-x-0 bg-white transition-transform duration-300 group-hover:scale-x-100" />
           </button>
+          <button
+            onClick={() => onNavigate('raupe')}
+            aria-label="Überraschung: Raupe-Spiel"
+            title="Psst …"
+            className="group relative px-4 py-0.5 font-body text-h2 leading-none font-semibold text-white cursor-pointer"
+          >
+            *
+            <span className="pointer-events-none absolute left-4 right-4 -bottom-0.5 h-[2px] origin-right scale-x-0 bg-white transition-transform duration-300 group-hover:scale-x-100" />
+          </button>
         </div>
 
         <div className="text-label font-condensed text-white/60">
           © 2026 <strong className="font-bold">RE\WARD</strong> — Die Circular Challenge · Stadt Leipzig. Alle Rechte vorbehalten.
         </div>
       </div>
-
-      <button
-        onClick={() => onNavigate('raupe')}
-        aria-label="Überraschung: Raupe-Spiel"
-        title="Psst …"
-        className="absolute bottom-4 right-4 sm:bottom-6 sm:right-6 px-2 font-condensed font-bold text-h4 leading-none text-white/40 transition-colors duration-200 hover:text-[#F07E26] cursor-pointer"
-      >
-        *
-      </button>
     </footer>
   );
 };

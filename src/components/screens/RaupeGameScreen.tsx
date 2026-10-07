@@ -11,8 +11,10 @@ interface Vec {
   y: number;
 }
 
+type TrashKind = 'can' | 'bottle' | 'peel' | 'paper' | 'bag' | 'box' | 'cup';
+
 interface Trash extends Vec {
-  icon: string;
+  kind: TrashKind;
 }
 
 interface Game {
@@ -30,7 +32,12 @@ const COLS = 16;
 const ROWS = 16;
 const CELL = 30;
 const SIZE = COLS * CELL;
-const TRASH_ICONS = ['🥫', '🍌', '🥤', '📰', '🧴', '🍾', '🛍️', '📦'];
+const TRASH_KINDS: TrashKind[] = ['can', 'bottle', 'peel', 'paper', 'bag', 'box', 'cup'];
+
+const INK = '#111827';
+const ORANGE = '#F07E26';
+const YELLOW = '#FED27A';
+const CREAM = '#FFF6A6';
 const HIGHSCORE_KEY = 'reward_raupe_highscore_v1';
 
 const UP: Vec = { x: 0, y: -1 };
@@ -39,6 +46,92 @@ const LEFT: Vec = { x: -1, y: 0 };
 const RIGHT: Vec = { x: 1, y: 0 };
 
 const tagClass = 'font-condensed text-label font-semibold uppercase tracking-wide corner-cut';
+
+const rect = (ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, fill: string, r = 0) => {
+  ctx.fillStyle = fill;
+  ctx.beginPath();
+  if (r > 0 && 'roundRect' in ctx) ctx.roundRect(x, y, w, h, r);
+  else ctx.rect(x, y, w, h);
+  ctx.fill();
+};
+
+// Flache Müll-Icons in den Markenfarben (Tinte, Orange, Gelb), ohne Kontur — Mittelpunkt (cx, cy).
+const drawTrash = (ctx: CanvasRenderingContext2D, kind: TrashKind, cx: number, cy: number) => {
+  switch (kind) {
+    case 'can':
+      rect(ctx, cx - 7, cy - 9, 14, 18, INK, 2);
+      rect(ctx, cx - 7, cy - 3, 14, 6, ORANGE);
+      rect(ctx, cx - 7.5, cy - 11, 15, 3, YELLOW, 1.5);
+      break;
+    case 'bottle':
+      rect(ctx, cx - 2.5, cy - 10, 5, 9, INK, 1);
+      rect(ctx, cx - 5.5, cy - 4, 11, 15, INK, 3);
+      rect(ctx, cx - 3, cy - 13, 6, 3.5, ORANGE, 1);
+      rect(ctx, cx - 5.5, cy + 1, 11, 5, YELLOW);
+      break;
+    case 'peel':
+      ctx.fillStyle = YELLOW;
+      ctx.beginPath();
+      ctx.arc(cx, cy - 3, 11.5, Math.PI * 0.12, Math.PI * 0.88);
+      ctx.arc(cx, cy - 8, 9, Math.PI * 0.88, Math.PI * 0.12, true);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = INK;
+      for (const sx of [-1, 1]) {
+        ctx.beginPath();
+        ctx.arc(cx + sx * 10.3, cy + 1.6, 1.8, 0, Math.PI * 2);
+        ctx.fill();
+      }
+      break;
+    case 'paper':
+      rect(ctx, cx - 9, cy - 10, 18, 20, CREAM, 2);
+      rect(ctx, cx - 6, cy - 7, 12, 3, INK);
+      rect(ctx, cx - 6, cy - 1, 12, 2, INK);
+      rect(ctx, cx - 6, cy + 3, 12, 2, INK);
+      rect(ctx, cx - 6, cy + 7, 7, 2, INK);
+      break;
+    case 'bag':
+      ctx.fillStyle = ORANGE;
+      ctx.beginPath();
+      ctx.moveTo(cx - 9, cy - 4);
+      ctx.lineTo(cx + 9, cy - 4);
+      ctx.lineTo(cx + 7, cy + 10);
+      ctx.lineTo(cx - 7, cy + 10);
+      ctx.closePath();
+      ctx.fill();
+      ctx.strokeStyle = INK;
+      ctx.lineWidth = 2;
+      for (const sx of [-1, 1]) {
+        ctx.beginPath();
+        ctx.arc(cx + sx * 4.5, cy - 4, 4, Math.PI, Math.PI * 2);
+        ctx.stroke();
+      }
+      break;
+    case 'box':
+      rect(ctx, cx - 9, cy - 8, 18, 17, ORANGE, 1.5);
+      rect(ctx, cx - 9, cy - 8, 18, 4, INK, 1.5);
+      rect(ctx, cx - 2.5, cy - 8, 5, 17, YELLOW);
+      break;
+    case 'cup':
+      ctx.fillStyle = INK;
+      ctx.beginPath();
+      ctx.moveTo(cx - 7, cy - 6);
+      ctx.lineTo(cx + 7, cy - 6);
+      ctx.lineTo(cx + 5, cy + 10);
+      ctx.lineTo(cx - 5, cy + 10);
+      ctx.closePath();
+      ctx.fill();
+      rect(ctx, cx - 5.6, cy + 1, 11.2, 4, ORANGE);
+      rect(ctx, cx - 8, cy - 9, 16, 3.5, YELLOW, 1.5);
+      ctx.strokeStyle = ORANGE;
+      ctx.lineWidth = 2.5;
+      ctx.beginPath();
+      ctx.moveTo(cx + 2, cy - 9);
+      ctx.lineTo(cx + 5, cy - 15);
+      ctx.stroke();
+      break;
+  }
+};
 
 const spawnTrash = (body: Vec[]): Trash | null => {
   const taken = new Set(body.map((b) => `${b.x},${b.y}`));
@@ -50,7 +143,7 @@ const spawnTrash = (body: Vec[]): Trash | null => {
   }
   if (free.length === 0) return null;
   const cell = free[Math.floor(Math.random() * free.length)];
-  return { ...cell, icon: TRASH_ICONS[Math.floor(Math.random() * TRASH_ICONS.length)] };
+  return { ...cell, kind: TRASH_KINDS[Math.floor(Math.random() * TRASH_KINDS.length)] };
 };
 
 const createGame = (): Game => {
@@ -98,10 +191,7 @@ export const RaupeGameScreen: React.FC<RaupeGameScreenProps> = ({ onNavigate }) 
     }
 
     if (g.trash) {
-      ctx.font = `${CELL * 0.78}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
-      ctx.textAlign = 'center';
-      ctx.textBaseline = 'middle';
-      ctx.fillText(g.trash.icon, g.trash.x * CELL + CELL / 2, g.trash.y * CELL + CELL / 2 + 1);
+      drawTrash(ctx, g.trash.kind, g.trash.x * CELL + CELL / 2, g.trash.y * CELL + CELL / 2);
     }
 
     for (let i = g.body.length - 1; i >= 0; i--) {
@@ -113,15 +203,13 @@ export const RaupeGameScreen: React.FC<RaupeGameScreenProps> = ({ onNavigate }) 
       ctx.arc(cx, cy, CELL * (isHead ? 0.47 : 0.4), 0, Math.PI * 2);
       ctx.fillStyle = isHead ? '#F07E26' : i % 2 === 0 ? '#F07E26' : '#FED27A';
       ctx.fill();
-      ctx.lineWidth = 2;
-      ctx.strokeStyle = '#111827';
-      ctx.stroke();
 
       if (isHead) {
         const d = g.dir;
         const perp = { x: -d.y, y: d.x };
         // Fühler
         ctx.lineWidth = 2;
+        ctx.strokeStyle = '#111827';
         for (const s of [-1, 1]) {
           const bx = cx + d.x * CELL * 0.3 + perp.x * CELL * 0.14 * s;
           const by = cy + d.y * CELL * 0.3 + perp.y * CELL * 0.14 * s;
