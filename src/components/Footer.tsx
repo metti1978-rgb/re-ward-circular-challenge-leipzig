@@ -83,7 +83,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
         onClick={() => onNavigate('raupi')}
         aria-label="Überraschung: Raupi-Spiel"
         title="Psst …"
-        className="absolute bottom-3 right-3 sm:bottom-5 sm:right-6 px-2 font-body text-h2 font-semibold leading-none text-white/70 transition-colors duration-200 hover:text-[#F07E26] cursor-pointer"
+        className="absolute bottom-3 right-3 sm:bottom-5 sm:right-6 px-2 font-condensed font-bold text-h4 leading-none text-white/40 transition-colors duration-200 hover:text-[#F07E26] cursor-pointer"
       >
         *
       </button>
