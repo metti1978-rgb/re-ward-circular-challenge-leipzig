@@ -31,7 +31,7 @@ Das Google-Konto, das dieses Skript hostet, ist unabhängig vom Hosting der Webs
 
 ## Bekannte offene Punkte (Stand zuletzt geprüft)
 
-- **Inhaltlicher Widerspruch:** Die Startseite sagt inzwischen "auch reine Gründungsideen ohne Prototyp willkommen", aber § 3 der Teilnahmebedingungen (`legalContent.ts`) verlangt weiterhin zwingend einen Prototyp. Ebenso: Startseite sagt "Mietfläche im Wiederschön für alle 3 Plätze", § 8 der Teilnahmebedingungen nennt die Mietfläche nur beim 1. Platz. Muss mit der verantwortlichen Stelle geklärt werden, welche Version gilt.
+- **Inhaltlicher Widerspruch (Mietfläche):** Startseite sagt "Mietfläche im Wiederschön für alle 3 Plätze", § 8 der Teilnahmebedingungen (`legalContent.ts`) nennt die Mietfläche nur beim 1. Platz. Muss mit der verantwortlichen Stelle geklärt werden, welche Version gilt. (Der frühere Widerspruch zur Prototyp-Pflicht in § 3 ist behoben.)
 - **Datenschutztext vs. tatsächliche Datenverarbeitung:** `legalContent.ts` (Datenschutz, Abschnitt 4/5) nennt als Empfänger/Auftragsverarbeiter nur TNC Production GmbH — Google (Apps Script/Drive/Sheets) taucht dort nicht auf, obwohl Bewerbungsdaten tatsächlich dorthin fließen. Sollte ergänzt werden.
 - Vor jeder inhaltlichen Änderung an Preisen/Teilnahmebedingungen: beide Stellen (Startseite + `legalContent.ts`) synchron halten.
 
