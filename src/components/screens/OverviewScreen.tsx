@@ -701,7 +701,7 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                   src={member.photo}
                   alt={member.name}
                   loading="lazy"
-                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border border-[#111827] mb-3"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border border-[#111827] mb-3 grayscale hover:grayscale-0 transition-[filter] duration-300"
                 />
                 <h3 className="text-h6 font-semibold text-[#111827]">{member.name}</h3>
                 <p className="text-label text-[#111827] leading-snug">{member.role}</p>
