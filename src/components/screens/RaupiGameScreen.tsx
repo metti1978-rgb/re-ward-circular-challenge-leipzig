@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 import { ScreenId } from '../../types';
 import { ArrowUpRight, ArrowUp, ArrowDown, ArrowLeft, ArrowRight } from 'lucide-react';
 
-interface RaupeGameScreenProps {
+interface RaupiGameScreenProps {
   onNavigate: (screen: ScreenId) => void;
 }
 
@@ -157,7 +157,7 @@ const createGame = (): Game => {
 
 const tickDelay = (collected: number) => Math.max(70, 150 - collected * 4);
 
-export const RaupeGameScreen: React.FC<RaupeGameScreenProps> = ({ onNavigate }) => {
+export const RaupiGameScreen: React.FC<RaupiGameScreenProps> = ({ onNavigate }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const gameRef = useRef<Game>(createGame());
   const statusRef = useRef<Status>('idle');
@@ -385,9 +385,9 @@ export const RaupeGameScreen: React.FC<RaupeGameScreenProps> = ({ onNavigate }) 
     >
       <div className="max-w-xl mx-auto flex flex-col items-center text-center">
         <span className={`${tagClass} text-[#F07E26]`}>GIMMICK</span>
-        <h2 className="uppercase text-[#111827] text-h2 mb-3">Raupe räumt auf</h2>
+        <h2 className="uppercase text-[#111827] text-h2 mb-3">Raupi räumt auf</h2>
         <p className="text-body text-[#111827] leading-relaxed mb-8">
-          Hilf der Raupe, den Müll einzusammeln. Jedes Teil bringt 10 Punkte — und die Raupe wird länger und schneller.
+          Hilf Raupi, den Müll einzusammeln. Jedes Teil bringt 10 Punkte — und Raupi wird länger und schneller.
           Steuerung mit Pfeiltasten oder WASD, am Handy per Wischen.
         </p>
 
@@ -405,7 +405,7 @@ export const RaupeGameScreen: React.FC<RaupeGameScreenProps> = ({ onNavigate }) 
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
-          <canvas ref={canvasRef} className="block w-full h-full" aria-label="Spielfeld der Raupe" />
+          <canvas ref={canvasRef} className="block w-full h-full" aria-label="Spielfeld von Raupi" />
 
           {status !== 'running' && (
             <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-white/85 p-6">
