@@ -11,7 +11,7 @@
 import { config as loadEnv } from 'dotenv';
 import SftpClient from 'ssh2-sftp-client';
 import path from 'path';
-import { existsSync } from 'fs';
+import { existsSync, readdirSync } from 'fs';
 
 loadEnv({ quiet: true });
 loadEnv({ path: '.env.local', override: true, quiet: true });
@@ -56,6 +56,18 @@ try {
   await sftp.uploadDir(localDir, remoteDir, {
     filter: (itemPath) => path.basename(itemPath) !== '.DS_Store',
   });
+
+  // Alte Vite-Bundles (index-<hash>.js/.css) aufräumen, erst nach erfolgreichem Upload.
+  // Angefasst werden nur Dateien dieses Namensmusters, die im aktuellen Build nicht vorkommen.
+  const currentBundles = new Set(readdirSync(path.join(localDir, 'assets')));
+  const remoteAssets = `${remoteDir.replace(/\/$/, '')}/assets`;
+  const stale = (await sftp.list(remoteAssets)).filter(
+    (f) => f.type === '-' && /^index-[\w-]+\.(js|css)$/.test(f.name) && !currentBundles.has(f.name)
+  );
+  for (const f of stale) {
+    await sftp.delete(`${remoteAssets}/${f.name}`);
+    console.log(`Alte Datei entfernt: ${f.name}`);
+  }
 
   console.log('Deploy abgeschlossen.');
 } catch (err) {
