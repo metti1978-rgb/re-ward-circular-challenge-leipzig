@@ -8,7 +8,8 @@ import {
   NOT_FITTING,
   TARGET_GROUPS,
   LEIPZIG_CONNECTION_EXAMPLES,
-  TIMELINE
+  TIMELINE,
+  JURY
 } from '../../data/awardData';
 import { Check, X, ArrowUpRight, MapPin, Calendar } from 'lucide-react';
 import confetti from 'canvas-confetti';
@@ -680,6 +681,34 @@ export const OverviewScreen: React.FC<OverviewScreenProps> = ({ onNavigate }) =>
                 );
               })}
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* JURY — Fläche: weiß */}
+      <section
+        id="jury"
+        className="w-full py-14 sm:py-20 px-3 sm:px-6"
+        style={{ background: '#FFFFFF' }}
+      >
+        <div className="max-w-5xl mx-auto flex flex-col items-center text-center">
+          <h2 className="uppercase text-[#111827] text-h2 mb-10">DIE JURY</h2>
+
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-x-4 gap-y-10 md:gap-x-8 w-full">
+            {JURY.map((member) => (
+              <div key={member.name} className="flex flex-col items-center gap-4">
+                <img
+                  src={member.photo}
+                  alt={member.name}
+                  loading="lazy"
+                  className="w-32 h-32 sm:w-40 sm:h-40 rounded-full object-cover border border-[#111827]"
+                />
+                <div className="space-y-1">
+                  <h3 className="text-h6 font-semibold text-[#111827]">{member.name}</h3>
+                  <p className="text-label text-[#111827] leading-snug">{member.role}</p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>

@@ -6,3 +6,6 @@ coverage/
 *.log
 .env*
 !.env.example
+
+# Foto-Originale (nur lokal)
+assets-src/

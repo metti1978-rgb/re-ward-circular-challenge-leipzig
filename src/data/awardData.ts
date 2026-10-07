@@ -117,3 +117,26 @@ export const TIMELINE: TimelineMilestone[] = [
     location: 'Leipzig'
   }
 ];
+
+export const JURY: { name: string; role: string; photo: string }[] = [
+  {
+    name: 'Sonja Wegge',
+    role: 'Leiterin evolis – Freiwilliges Sekretariat Zirkuläre Städte Deutschland evolvis',
+    photo: '/assets/jury/sonja-wegge.jpg'
+  },
+  {
+    name: 'Anne-Sophie Müller',
+    role: 'Co-founderin Trashgalore Gbr',
+    photo: '/assets/jury/anne-sophie-mueller.jpg'
+  },
+  {
+    name: 'Dr. Andrea Hensel',
+    role: 'Fachreferentin für Transformation und Nachhaltigkeit in der Kultur',
+    photo: '/assets/jury/andrea-hensel.jpg'
+  },
+  {
+    name: 'Susanne Kroll',
+    role: 'Clusterkoordinatorin Circular MTC e.V.',
+    photo: '/assets/jury/susanne-kroll.jpg'
+  }
+];
