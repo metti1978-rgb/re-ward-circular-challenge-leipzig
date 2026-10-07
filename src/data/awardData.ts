@@ -131,7 +131,7 @@ export const JURY: { name: string; role: string; photo: string }[] = [
   },
   {
     name: 'Dr. Andrea Hensel',
-    role: 'Fachreferentin für Transformation und Nachhaltigkeit in der Kultur',
+    role: 'Fachreferentin für Transformation und Nachhaltigkeit in der Kultur der Stadt Leipzig',
     photo: '/assets/jury/andrea-hensel.jpg'
   },
   {
